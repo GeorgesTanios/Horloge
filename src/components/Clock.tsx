@@ -1,17 +1,18 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 
 const Clock: React.FC = () => {
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
-        const timer = setInterval(() => {
+        const timer: number = setInterval(() => {
             setDate(new Date());
+
         }, 1000);
         return () => clearInterval(timer);
     }, []);
 
-    const formattedTime = date.toLocaleTimeString('fr-FR', {
+    const formattedTime: string = date.toLocaleTimeString('fr-FR', {
         hour: 'numeric',
         minute: 'numeric',
         second: 'numeric',
@@ -23,7 +24,6 @@ const Clock: React.FC = () => {
                 <p>{formattedTime}</p>
             </ClockContainer>
         </>
-
     );
 };
 

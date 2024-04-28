@@ -1,10 +1,10 @@
-import Clock from './components/Clock.tsx';
+import ClockComponent from './components/ClockComponent.tsx';
 
 function App() {
 
     return (
         <>
-            <Clock/>
+            <ClockComponent/>
         </>
     )
 }
